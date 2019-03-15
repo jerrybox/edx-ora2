@@ -2,6 +2,7 @@ from . import s3
 from . import filesystem
 from . import swift
 from . import django_storage
+from . import aliyunoss
 
 from django.conf import settings
 
@@ -17,5 +18,7 @@ def get_backend():
         return swift.Backend()
     elif backend_setting == "django":
         return django_storage.Backend()
+    elif backend_setting == "aliyunoss":
+        return aliyunoss.Backend()
     else:
         raise ValueError("Invalid ORA2_FILEUPLOAD_BACKEND setting value: %s" % backend_setting)
