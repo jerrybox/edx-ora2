@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Note1: Both  cms and lms need to be configured.
 Note2: aliyunoss configure  Access-Control-Allow-Origin
