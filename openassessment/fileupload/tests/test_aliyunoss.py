@@ -12,9 +12,9 @@ from openassessment.fileupload import api
 
 @override_settings(
     ORA2_FILEUPLOAD_BACKEND='aliyunoss',
-    ALIYUN_OSS_ENDPOINT='http://www.example.com:12345',
-    ALIYUN_ACCESS_KEY_ID = 'aliyun_access_key_id',
-    ALIYUN_ACCESS_KEY_SECRET = 'aliyun_access_key_secret',
+    OSS_ENDPOINT='http://www.example.com:12345',
+    OSS_ACCESS_KEY_ID='aliyun_access_key_id',
+    OSS_ACCESS_KEY_SECRET='aliyun_access_key_secret',
     FILE_UPLOAD_STORAGE_BUCKET_NAME='bucket_name'
 )
 class TestAliyunossBackend(TestCase):
