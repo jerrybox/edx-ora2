@@ -755,6 +755,14 @@ OpenAssessment.ResponseView.prototype = {
         });
     },
 
+
+    removeUploadingDiv: function() {
+        var divuploading = $(this.element).find('#uploading').first();
+        $(divuploading).remove();
+    },
+
+
+
     /**
      Manages file uploads for submission attachments.
 
@@ -772,12 +780,24 @@ OpenAssessment.ResponseView.prototype = {
             return view.saveFilesDescriptions();
         });
 
+        var divUploading = null;
+        divUploading = $("<div  id='uploading'><font color=#5EB91F size='5'>"+gettext("Please wait while uploading... ...")+"</font></div>");
+        sel.find('.file__upload').after(divUploading);
+
+
         $.each(view.files, function(index, file) {
             promise = promise.then(function() {
                 return view.fileUpload(view, file.type, file.name, index, file, fileCount === (index + 1));
             });
         });
 
+
+	promise = promise.then(function() {
+		return view.removeUploadingDiv();
+	});
+
+
+        
         return promise;
     },
 
