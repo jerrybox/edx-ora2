@@ -530,6 +530,7 @@ class OpenAssessmentBlock(MessageMixin,
             "ALLOWED_FILE_MIME_TYPES": self.ALLOWED_FILE_MIME_TYPES,
             "FILE_EXT_BLACK_LIST": self.FILE_EXT_BLACK_LIST,
             "FILE_TYPE_WHITE_LIST": self.white_listed_file_types,
+            "MAX_FILES_SIZE": getattr(settings, 'STUDENT_FILEUPLOAD_MAX_SIZE', 10485760)
         }
         fragment.initialize_js(initialize_js_func, js_context_dict)
         return fragment

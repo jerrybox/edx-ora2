@@ -568,7 +568,7 @@ OpenAssessment.ResponseView.prototype = {
             fileType = files[i].type;
             fileName = files[i].name;
 
-            if (totalSize > this.MAX_FILES_SIZE) {
+            if (totalSize > this.data.MAX_FILES_SIZE) {
                 this.baseView.toggleActionError(
                     'upload',
                     gettext("File size must be 10MB or less.")
